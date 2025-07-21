@@ -115,9 +115,9 @@ export default function Barbers() {
                 >
                   Book Appointment
                 </button>
-                <button className="text-sm text-white/70 hover:text-amber-400 transition-slow">
+                {/* <button className="text-sm text-white/70 hover:text-amber-400 transition-slow">
                   View Portfolio <i className="fas fa-arrow-right ml-1"></i>
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
