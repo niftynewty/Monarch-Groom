@@ -39,8 +39,8 @@ const Footer = () => (
         <div>
           <h3 className="text-lg font-bold mb-4">Contact Us</h3>
           <ul className="space-y-3">
-            <li className="flex items-start"><i className="fas fa-map-marker-alt text-amber-500 mt-1 mr-3"></i><span className="text-white/70">123 Groom Street, Style District, NY 10001</span></li>
-            <li className="flex items-center"><i className="fas fa-phone-alt text-amber-500 mr-3"></i><span className="text-white/70">+1 (555) 123-4567</span></li>
+            <li className="flex items-start"><i className="fas fa-map-marker-alt text-amber-500 mt-1 mr-3"></i><span className="text-white/70">Kabarak Nakuru</span></li>
+            <li className="flex items-center"><i className="fas fa-phone-alt text-amber-500 mr-3"></i><span className="text-white/70">+254 711 34 6177</span></li>
             <li className="flex items-center"><i className="fas fa-envelope text-amber-500 mr-3"></i><span className="text-white/70">hello@monarchgroom.com</span></li>
           </ul>
         </div>
