@@ -47,9 +47,9 @@ const Home = () => {
                   Book Now <i class="fas fa-arrow-right ml-2"></i>
                 </button>
               </Link>
-              <button class="glass-card px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-slow glow-effect">
+              {/* <button class="glass-card px-8 py-3 rounded-full font-medium hover:bg-white/10 transition-slow glow-effect">
                 <i class="fas fa-play-circle mr-2"></i> Watch Demo
-              </button>
+              </button> */}
             </div>
           </div>
           <div class="md:w-1/2 mt-12 md:mt-0 relative">
@@ -75,7 +75,7 @@ const Home = () => {
         <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-r from-amber-500/5 to-transparent rounded-full filter blur-3xl -z-1"></div>
       </section>
 
-      {/* <!-- Stats Section --> */}
+      {/* <!-- Stats Section -->
       <section class="py-12 md:py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -113,7 +113,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Services Section --> */}
       <section id="services" class="py-12 md:py-20">
