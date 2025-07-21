@@ -46,10 +46,10 @@ const Login = () => {
             <input type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-slow" required />
           </div>
           <button type="submit" className="w-full bg-amber-500 hover:bg-amber-400 py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-slow">Sign In</button>
-          <button type="button" onClick={handleGoogleLogin} className="w-full glass-card py-3 px-4 border border-white/20 rounded-lg shadow-sm text-sm font-medium text-white flex items-center justify-center space-x-2 transition-slow hover:bg-white/10 mt-2">
+          {/* <button type="button" onClick={handleGoogleLogin} className="w-full glass-card py-3 px-4 border border-white/20 rounded-lg shadow-sm text-sm font-medium text-white flex items-center justify-center space-x-2 transition-slow hover:bg-white/10 mt-2">
             <i className="fab fa-google text-red-500"></i>
             <span>Continue with Google</span>
-          </button>
+          </button> */}
         </div>
         <p className="mt-6 text-center text-sm text-white/70">
           Don't have an account? <a href="/signup" className="text-amber-500 hover:text-amber-400 font-medium">Sign Up</a>
