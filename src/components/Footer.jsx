@@ -46,7 +46,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-white/50 text-sm mb-4 md:mb-0">&copy; 2023 Monarch Groom. All rights reserved.</p>
+        <p className="text-white/50 text-sm mb-4 md:mb-0">&copy; 2025 Monarch Groom. All rights reserved.</p>
         <div className="flex space-x-6">
           <a href="#" className="text-white/50 hover:text-white text-sm">Privacy Policy</a>
           <a href="#" className="text-white/50 hover:text-white text-sm">Terms of Service</a>
