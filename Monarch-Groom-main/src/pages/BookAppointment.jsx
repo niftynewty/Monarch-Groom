@@ -89,8 +89,8 @@ export default function BookAppointment() {
         {/* Barber Selection */}
         <div>
           <label className="block text-sm mb-1">Barber</label>
-          <select name="barber" value={formData.barber} onChange={handleChange} required className="w-full p-2 rounded bg-white/10" class="blank">
-            <option class="blank" value="">Select a barber</option>
+          <select name="barber" value={formData.barber} onChange={handleChange} required className="w-full p-2 rounded bg-white/10" >
+            <option  value="">Select a barber</option>
             {barbers.map((barber) => (
               <option key={barber.id} value={barber.name}>{barber.name}</option>
             ))}
