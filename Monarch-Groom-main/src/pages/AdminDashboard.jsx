@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection,onSnapshot, getDocs } from "firebase/firestore";
 import { db } from "../firebase/config";
 import AdminSidebar from "../components/admin/AdminSidebar";
 import AppointmentsTab from "../components/admin/AppointmentsTab";
@@ -28,46 +28,33 @@ const AdminDashboard = () => {
 
   // Fetch all data
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading({
-          services: true,
-          barbers: true,
-          appointments: true,
-          users: true,
-        });
-
-        const [servicesSnap, barbersSnap, appointmentsSnap, usersSnap] =
-          await Promise.all([
-            getDocs(collection(db, "services")),
-            getDocs(collection(db, "barbers")),
-            getDocs(collection(db, "appointments")),
-            getDocs(collection(db, "users")),
-          ]);
-
-        setServices(
-          servicesSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-        setBarbers(
-          barbersSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-        setAppointments(
-          appointmentsSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-        setUsers(usersSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading({
-          services: false,
-          barbers: false,
-          appointments: false,
-          users: false,
-        });
-      }
+    const unsubServices = onSnapshot(collection(db, "services"), (snapshot) => {
+      setServices(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading((prev) => ({ ...prev, services: false }));
+    });
+  
+    const unsubBarbers = onSnapshot(collection(db, "barbers"), (snapshot) => {
+      setBarbers(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading((prev) => ({ ...prev, barbers: false }));
+    });
+  
+    const unsubAppointments = onSnapshot(collection(db, "appointments"), (snapshot) => {
+      setAppointments(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading((prev) => ({ ...prev, appointments: false }));
+    });
+  
+    const unsubUsers = onSnapshot(collection(db, "users"), (snapshot) => {
+      setUsers(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading((prev) => ({ ...prev, users: false }));
+    });
+  
+    // Clean up on unmount
+    return () => {
+      unsubServices();
+      unsubBarbers();
+      unsubAppointments();
+      unsubUsers();
     };
-
-    fetchData();
   }, []);
 
   return (
